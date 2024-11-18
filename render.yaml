@@ -1,0 +1,17 @@
+services:
+  - name: frp-server
+    type: web
+    env: docker
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    plan: free
+    envVars:
+      - key: BIND_PORT
+        value: "7000"
+      - key: DASHBOARD_PORT
+        value: "7500"
+    ports:
+      - type: tcp
+        port: 7000
+      - type: tcp
+        port: 7500
